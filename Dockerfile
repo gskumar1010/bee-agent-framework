@@ -8,18 +8,18 @@ USER root
 
 RUN corepack enable
 
-
-COPY . .
-
 RUN yarn install
-
 
 RUN yarn build
 
 ENV NPM_CONFIG_CACHE=/app/.npm
 
-RUN chgrp -R 0 /app /app/node_modules/ \
-    && chmod -R g=u /app /app/node_modules/
+RUN mkdir -p /.cache/node/corepack/v1
+
+RUN chgrp -R 0 /app /app/node_modules/ /.cache \
+    && chmod -R g=u /app /app/node_modules/ /.cache
+
+COPY . .
     
 EXPOSE 3000
 
