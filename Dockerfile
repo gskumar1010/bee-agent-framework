@@ -16,7 +16,11 @@ RUN yarn install
 
 RUN yarn build
 
+ENV NPM_CONFIG_CACHE=/app/.npm
 
+RUN chgrp -R 0 /app \
+    && chmod -R g=u /app
+    
 EXPOSE 3000
 
 USER 1001
