@@ -18,8 +18,8 @@ RUN yarn build
 
 ENV NPM_CONFIG_CACHE=/app/.npm
 
-RUN chgrp -R 0 /app  /app/node_modules/.vite \
-    && chmod -R g=u /app/node_modules/.vite
+RUN chgrp -R 0 /app /app/node_modules/ \
+    && chmod -R g=u /app /app/node_modules/
     
 EXPOSE 3000
 
