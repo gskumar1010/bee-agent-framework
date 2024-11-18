@@ -16,8 +16,6 @@ RUN yarn install
 
 RUN yarn build
 
-RUN chgrp -R 0 /app/node-modules \
-    && chmod -R g=u /app/node-modules
 
 EXPOSE 3000
 
