@@ -16,8 +16,8 @@ ENV NPM_CONFIG_CACHE=/app/.npm
 
 RUN mkdir -p /.cache/node/corepack/v1
 
-RUN chgrp -R 0 /app /app/node_modules/ /.cache \
-    && chmod -R g=u /app /app/node_modules/ /.cache
+RUN chgrp -R 0 /app /.cache \
+    && chmod -R g=u /app /.cache
 
 COPY . .
 
