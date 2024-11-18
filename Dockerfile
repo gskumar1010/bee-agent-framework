@@ -7,6 +7,9 @@ RUN yarn install
 
 COPY . .
 
+RUN corepack enable
+
+
 RUN yarn build
 
 EXPOSE 3000
