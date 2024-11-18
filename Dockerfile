@@ -10,7 +10,7 @@ RUN corepack enable
 
 RUN yarn install
 
-RUN yarn build
+
 
 ENV NPM_CONFIG_CACHE=/app/.npm
 
@@ -20,6 +20,9 @@ RUN chgrp -R 0 /app /app/node_modules/ /.cache \
     && chmod -R g=u /app /app/node_modules/ /.cache
 
 COPY . .
+
+RUN yarn build
+
     
 EXPOSE 3000
 
