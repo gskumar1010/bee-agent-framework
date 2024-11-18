@@ -8,10 +8,10 @@ RUN corepack enable
 
 COPY . .
 
+RUN yarn install
 
 
 RUN yarn build
-RUN yarn install
 
 EXPOSE 3000
 
